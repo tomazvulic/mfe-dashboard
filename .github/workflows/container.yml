@@ -22,13 +22,13 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
-          with:
-            name: dist
-            path: dist 
-            if-no-files-found: error
-            retention-days: 1
+      # - name: Archive Production Artifact
+      - uses: actions/upload-artifact@master
+        with:
+          name: dist
+          path: /dist 
+          if-no-files-found: error
+          retention-days: 1
 
       #  Refactor this to work on firebase
       # - uses: [username]/action-aws-cli@v1.1
@@ -36,7 +36,7 @@ jobs:
       # env:
       #   AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
       #   AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-      
+
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
           with:
