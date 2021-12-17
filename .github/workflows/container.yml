@@ -13,28 +13,22 @@ defaults:
 
 jobs:
   build:
-    name: Build and deploy
     runs-on: ubuntu-latest
 
     steps:
-      name: Checkout Repo
       - uses: actions/checkout@v2
-      name: Install Dependencies
       - run: npm install
-      name: Build
       - run: npm run build
-      name: Archive Production Artifact
-        - uses: actions/upload-artifact@master
-          with:
-            name: dist
-            path: dist
+      - uses: actions/upload-artifact@master
+        with:
+          name: dist
+          path: dist
       #  Refactor this to work on firebase
       # - uses: [username]/action-aws-cli@v1.1
       # - run: aws s3 sync dist s3://${{secrets.AWS_S3_BUCKET_NAME}}/container/latest
       # env:
       #   AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
       #   AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-      name: Deploy to Firebase
       - uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
