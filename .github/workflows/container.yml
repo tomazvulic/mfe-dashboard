@@ -22,13 +22,13 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: dist
-          path: dist
-          if-no-files-found: error
-          retention-days: 1
+      # - name: Archive Production Artifact
+      #   uses: actions/upload-artifact@master
+      #   with:
+      #     name: dist
+      #     path: dist
+      #     if-no-files-found: error
+      #     retention-days: 1
 
       # Refactor this to work on firebase
       # - uses: [username]/action-aws-cli@v1.1
