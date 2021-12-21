@@ -22,8 +22,6 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-        env:
-          PRODUCTION_DOMAIN_MARKETING: ${{secrets.PRODUCTION_DOMAIN_MARKETING}}
       # - name: Archive Production Artifact
       #   uses: actions/upload-artifact@master
       #   with:
@@ -43,6 +41,6 @@ jobs:
         uses: w9jds/firebase-action@master
         with:
           # args: deploy --only hosting
-          args: firebase target:apply hosting container tv2022-mfe-container
+          args: firebase target:apply hosting container tv2022-mfe-dashboard
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
