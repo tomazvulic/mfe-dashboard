@@ -42,7 +42,8 @@ jobs:
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          args: target:apply hosting container tv2022-mfe-container
-          args: deploy --only hosting 
+          args:
+            - target:apply hosting container tv2022-mfe-container;
+              deploy --only hosting;
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
