@@ -43,7 +43,7 @@ jobs:
         uses: w9jds/firebase-action@master
         with:
           args:
-            deploy --only hosting:container
+            deploy --only hosting:tv2022-mfe-container
             # - target:apply hosting container tv2022-mfe-container;
 
         env:

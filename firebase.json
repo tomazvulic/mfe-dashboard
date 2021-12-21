@@ -1,6 +1,5 @@
 {
   "hosting": [{
-    "target": "container",
     "site": "tv2022-mfe-container",
     "public": "packages/container/dist",
     "ignore": [
@@ -9,7 +8,6 @@
       "**/node_modules/**"
     ]
     },{
-    "target": "marketing",
     "site": "tv2022-mfe-marketing",
     "public": "packages/marketing/dist",
     "ignore": [
