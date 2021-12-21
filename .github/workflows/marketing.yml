@@ -29,6 +29,6 @@ jobs:
         uses: w9jds/firebase-action@master
         with:
           # args: deploy --only hosting
-          args: firebase target:apply hosting marketing tv2022-mfe-marketing
+          args: deploy --only hosting:tv2022-mfe-marketing
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
